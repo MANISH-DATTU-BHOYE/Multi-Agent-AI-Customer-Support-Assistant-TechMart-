@@ -1,0 +1,6 @@
+TechMart Electronics - General User Manual
+
+Getting Started: After logging in, visit "My Account" to manage subscriptions, view order
+history, and update payment methods.
+Password Reset: Click "Forgot Password" on the login page and follow the emailed link.
+Session Management: For security, sessions expire after 60 minutes of inactivity.

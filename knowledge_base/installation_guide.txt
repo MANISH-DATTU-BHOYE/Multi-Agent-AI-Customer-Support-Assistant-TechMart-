@@ -1,0 +1,8 @@
+TechMart Electronics - Installation Guide (Software Products)
+
+1. Download the installer from your account's "My Purchases" page.
+2. Run the installer and accept the license agreement.
+3. Enter the license key emailed to you at purchase.
+4. Restart your device after installation completes.
+Common installation errors are usually resolved by disabling antivirus software temporarily
+and ensuring you have at least 2GB of free disk space.

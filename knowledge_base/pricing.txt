@@ -1,0 +1,7 @@
+TechMart Electronics - Pricing & Plans
+
+Basic Plan: Free - access to standard product catalog and community support.
+Premium Plan: $9.99/month - priority support, extended warranty, exclusive discounts.
+Premium is billed monthly and can be cancelled anytime from Account Settings.
+If you paid for Premium but features remain locked, this is usually resolved by logging out
+and logging back in; if the issue persists it is escalated to the technical team.

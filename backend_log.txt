@@ -1,0 +1,251 @@
+INFO:     Will watch for changes in these directories: ['/home/manish/Documents/customer-support-ai']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [15733] using WatchFiles
+INFO:     Started server process [15737]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53558 - "OPTIONS /chat/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53558 - "POST /chat/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/manish/Documents/customer-support-ai/backend/api/chat_routes.py", line 29, in chat
+    await save_conversation_turn(
+  File "/home/manish/Documents/customer-support-ai/backend/database/db.py", line 29, in save_conversation_turn
+    await conversations_collection.insert_one(turn.model_dump())
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 890, in insert_one
+    self._insert_one(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 830, in _insert_one
+    self._database.client._retryable_write(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2113, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1986, in _retry_with_session
+    return self._retry_internal(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2038, in _retry_internal
+    ).run()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2811, in run
+    res = self._read() if self._is_read else self._write()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2992, in _write
+    self._server = self._get_server()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2975, in _get_server
+    return self._client._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1851, in _select_server
+    server = topology.select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 428, in select_server
+    server = self._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 402, in _select_server
+    servers = self.select_servers(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a5dc94a87d095ea412f94c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     127.0.0.1:47242 - "OPTIONS /chat/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47242 - "POST /chat/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/manish/Documents/customer-support-ai/backend/api/chat_routes.py", line 29, in chat
+    await save_conversation_turn(
+  File "/home/manish/Documents/customer-support-ai/backend/database/db.py", line 29, in save_conversation_turn
+    await conversations_collection.insert_one(turn.model_dump())
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 890, in insert_one
+    self._insert_one(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 830, in _insert_one
+    self._database.client._retryable_write(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2113, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1986, in _retry_with_session
+    return self._retry_internal(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2038, in _retry_internal
+    ).run()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2811, in run
+    res = self._read() if self._is_read else self._write()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2992, in _write
+    self._server = self._get_server()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2975, in _get_server
+    return self._client._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1851, in _select_server
+    server = topology.select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 428, in select_server
+    server = self._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 402, in _select_server
+    servers = self.select_servers(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a5dc94a87d095ea412f94c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     127.0.0.1:38300 - "OPTIONS /chat/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38300 - "POST /chat/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/manish/Documents/customer-support-ai/backend/api/chat_routes.py", line 29, in chat
+    await save_conversation_turn(
+  File "/home/manish/Documents/customer-support-ai/backend/database/db.py", line 29, in save_conversation_turn
+    await conversations_collection.insert_one(turn.model_dump())
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 890, in insert_one
+    self._insert_one(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/collection.py", line 830, in _insert_one
+    self._database.client._retryable_write(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2113, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1986, in _retry_with_session
+    return self._retry_internal(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2038, in _retry_internal
+    ).run()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2811, in run
+    res = self._read() if self._is_read else self._write()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2992, in _write
+    self._server = self._get_server()
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 2975, in _get_server
+    return self._client._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/mongo_client.py", line 1851, in _select_server
+    server = topology.select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 428, in select_server
+    server = self._select_server(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 402, in _select_server
+    servers = self.select_servers(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/home/manish/Documents/customer-support-ai/.venv/lib/python3.10/site-packages/pymongo/synchronous/topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6a5dc94a87d095ea412f94c2, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: localhost:27017: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+WARNING:  WatchFiles detected changes in 'backend/database/db.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15737]
+INFO:     Started server process [16850]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

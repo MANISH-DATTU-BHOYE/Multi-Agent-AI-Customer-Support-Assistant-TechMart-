@@ -1,0 +1,14 @@
+/* =========================================================
+   frontend/styles/globals.css
+   -----------------------------------------------------------
+   Global Tailwind CSS entrypoint imported once in _app.jsx.
+   ========================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f9fafb;
+}

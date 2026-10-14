@@ -1,0 +1,37 @@
+# =========================================================
+# requirements.txt
+# All Python dependencies required to run the FastAPI backend,
+# the RAG pipeline, the vector store, and the LLM integration.
+# Install with:  pip install -r requirements.txt
+# =========================================================
+
+# --- Web framework ---
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.4
+python-multipart==0.0.9
+
+# --- Authentication / security ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# --- Database ---
+pymongo==4.7.3          # MongoDB driver
+motor==3.4.0            # Async MongoDB driver used by FastAPI routes
+
+# --- LLM / Agents ---
+openai==1.35.7          # OpenAI GPT SDK (swap for Gemini/Groq SDK if preferred)
+langchain==0.2.6
+langchain-community==0.2.6
+
+# --- Embeddings & RAG ---
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0
+chromadb==0.5.3
+pypdf==4.2.0
+tiktoken==0.7.0
+
+# --- Utilities ---
+pandas==2.2.2
+python-dotenv==1.0.1
+numpy==1.26.4

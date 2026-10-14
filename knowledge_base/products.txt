@@ -1,0 +1,7 @@
+TechMart Electronics - Product Catalog Overview
+
+TechMart offers laptops, smartphones, smart-home devices, and accessories.
+Popular comparison: Model A (budget, 8GB RAM, 256GB storage) vs Model B (premium, 16GB RAM,
+512GB storage, faster processor). Model B costs $200 more than Model A.
+All products are eligible for the standard 1-year warranty; Premium members get 2 years.
+Availability is shown live on each product page; out-of-stock items can be back-ordered.
